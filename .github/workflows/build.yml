@@ -10,6 +10,16 @@ on:
   pull_request:
   workflow_dispatch: # allow manually triggering builds
 jobs:
+  event:
+    name: Event
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    steps:
+      - name: Event
+        run: cat "$GITHUB_EVENT_PATH"
   bluebuild:
     name: Build Custom Image
     runs-on: ubuntu-latest
