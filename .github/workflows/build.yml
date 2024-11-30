@@ -51,3 +51,10 @@ jobs:
           pr_event_number: ${{ github.event.number }}
           squash: true
           cli_version: main
+      - name: Run Rechunker
+        id: rechunk
+        uses: hhd-dev/rechunk@v1.0.1
+        with:
+          rechunk: 'ghcr.io/hhd-dev/rechunk:v1.0.1'
+          ref: 'ghcr.io/gmpinder/testos'
+          version: '41'
