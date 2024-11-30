@@ -19,7 +19,9 @@ jobs:
       id-token: write
     steps:
       - name: Event
-        run: cat "$GITHUB_EVENT_PATH"
+        run: |
+          cat "$GITHUB_EVENT_PATH"
+          sudo podman info
   bluebuild:
     name: Build Custom Image
     runs-on: ubuntu-24.04
