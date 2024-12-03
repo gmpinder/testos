@@ -22,6 +22,8 @@ jobs:
         run: |
           cat "$GITHUB_EVENT_PATH"
           sudo podman info
+          sudo echo "$PATH"
+          sudo -E echo "$PATH"
   bluebuild:
     name: Build Custom Image
     runs-on: ubuntu-24.04
