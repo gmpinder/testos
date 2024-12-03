@@ -44,17 +44,9 @@ jobs:
           password: ${{ github.token }}
        # the build is fully handled by the reusable github action
       - name: Build Custom Image
-        uses: blue-build/github-action@v1
+        uses: blue-build/github-action@rechunk
         with:
           recipe: ${{ matrix.recipe }}
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}
           pr_event_number: ${{ github.event.number }}
-          squash: true
-          cli_version: main
-      - name: Run Rechunker
-        id: rechunk
-        uses: hhd-dev/rechunk@v1.0.1
-        with:
-          rechunk: 'ghcr.io/hhd-dev/rechunk:v1.0.1'
-          ref: 'ghcr.io/gmpinder/testos'
-          version: '41'
+          rechunk: true
