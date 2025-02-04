@@ -51,5 +51,4 @@ jobs:
           recipe: ${{ matrix.recipe }}
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}
           pr_event_number: ${{ github.event.number }}
-          rechunk: true
-          cli_version: 'prepare-0.9.0'
+          # rechunk: true
