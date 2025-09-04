@@ -51,5 +51,5 @@ jobs:
           recipe: ${{ matrix.recipe }}
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}
           pr_event_number: ${{ github.event.number }}
-          build_opts: "-v"
-          # rechunk: true
+          build_opts: "-v -B buildah"
+          rechunk: true
